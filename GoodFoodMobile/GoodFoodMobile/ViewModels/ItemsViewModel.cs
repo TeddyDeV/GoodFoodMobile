@@ -59,7 +59,7 @@ namespace GoodFoodMobile.ViewModels
 
         public Item SelectedItem
         {
-            get => _selectedItem;
+            get => _selectedItem; 
             set
             {
                 SetProperty(ref _selectedItem, value);
