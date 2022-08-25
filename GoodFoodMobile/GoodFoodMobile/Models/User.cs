@@ -14,6 +14,7 @@ namespace GoodFoodMobile.Models
         public string  address { get; set; }
         public string  postalCode { get; set; }
         public string  city { get; set; }
+        public string phoneNumber { get; set; }
 
     }
 }

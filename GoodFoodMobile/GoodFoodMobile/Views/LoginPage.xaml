@@ -12,12 +12,16 @@
             <Label HorizontalOptions="Center" FontSize="Large">GoodFood</Label>
             <Label></Label>
             <Label></Label>
-            <Label HorizontalOptions="Center">Email :</Label>
+            <!--<Label HorizontalOptions="Center">Email :</Label>-->
             <Entry x:Name="Email" Placeholder="Email" HeightRequest="40" Keyboard="Email" Text="{Binding Email}"></Entry>
             <Label></Label>
-            <Label HorizontalOptions="Center">Mot de passe :</Label>
+            <Label></Label>
+            <!--<Label HorizontalOptions="Center">Mot de passe :</Label>-->
             <Entry x:Name="Password" Placeholder="Mot de passe" IsPassword="True" HeightRequest="40"  Text="{Binding Password}" ></Entry>
-            <Button VerticalOptions="Center" Text="Connexion" FontSize="Large" HorizontalOptions="FillAndExpand" FontAttributes="Bold" Command="{Binding LoginCommand}"/>
+            <Button VerticalOptions="Center" Text="Connexion" BackgroundColor="Green" FontSize="Large" HorizontalOptions="FillAndExpand" FontAttributes="Bold" Command="{Binding LoginCommand}"/>
+            <Label></Label>
+            <Button VerticalOptions="Center" Text="Créer le !" Command="{Binding AddUserCommand}"></Button>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

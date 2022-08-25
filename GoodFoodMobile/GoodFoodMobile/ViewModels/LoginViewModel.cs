@@ -18,6 +18,7 @@ namespace GoodFoodMobile.ViewModels
     {
         public List<User> Users;
         public Command LoginCommand { get; }
+        public Command AddUserCommand { get; }
         public Command LoadUsersCommand { get; }
 
         UsersDataStore userDataStore = new UsersDataStore();
@@ -59,6 +60,7 @@ namespace GoodFoodMobile.ViewModels
             };
 
             LoginCommand = new Command(OnSubmit);
+            AddUserCommand = new Command(AddUser);
             //Users = userDataStore.GetUsers();
             //LoadUsersCommand = new Command(async () => await ExecuteLoadUsersCommand());
         }
@@ -98,21 +100,19 @@ namespace GoodFoodMobile.ViewModels
         private async void OnSubmit(object obj)
         {
             // on vérifie que les identifiants correpondent à un compte existant
-            if (email == "teddy.devin@viacesi.fr")
+            if (Users.Count(u=> u.email == email && u.password == password) != 0)
             {
-                if (password == "123")
-                {
-                    await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
-                }
-                else
-                {
-                    DisplayInvalidPasswordPrompt();
-                }
+                    await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
             }
             else
             {
                 DisplayInvalidLoginPrompt();
             }
+        }
+
+        private async void AddUser(object obj)
+        {
+            await Shell.Current.GoToAsync($"//{nameof(AddUserPage)}");
         }
     }
 }
