@@ -10,7 +10,7 @@ namespace GoodFoodMobile.Services
 {
     public class UsersDataStore : UsersDataStore<User>
     {
-        readonly List<User> users;
+        public  List<User> users;
 
         public UsersDataStore()
         {

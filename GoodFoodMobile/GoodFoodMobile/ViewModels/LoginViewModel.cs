@@ -1,4 +1,5 @@
 ﻿using GoodFoodMobile.Models;
+using GoodFoodMobile.Services;
 using GoodFoodMobile.Views;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,13 @@ using Xamarin.Forms;
 
 namespace GoodFoodMobile.ViewModels
 {
-    public class LoginViewModel : BaseViewModel
+    public class LoginViewModel : INotifyPropertyChanged
     {
-        public List<User> Users = new List<User>();
+        public List<User> Users;
         public Command LoginCommand { get; }
         public Command LoadUsersCommand { get; }
+
+        UsersDataStore userDataStore = new UsersDataStore();
 
         public Action DisplayInvalidLoginPrompt;
         public Action DisplayInvalidPasswordPrompt;
@@ -49,8 +52,14 @@ namespace GoodFoodMobile.ViewModels
 
         public LoginViewModel()
         {
+            Users = new List<User>()
+            {
+                new User { id = Guid.NewGuid().ToString(), lastName = "Devin", firstName = "Teddy", email = "teddy.devin@viacesi.fr", password = "123", address = "70 rue entre deux landes" , postalCode = "76220", city ="La Feuillie" },
+                new User { id = Guid.NewGuid().ToString(), lastName = "John", firstName = "Doe", email = "john.doe@viacesi.fr", password = "123", address = "2 rue des portiers" , postalCode = "76000", city ="Rouen" }
+            };
+
             LoginCommand = new Command(OnSubmit);
-            Users = userDataStore.GetUsers();
+            //Users = userDataStore.GetUsers();
             //LoadUsersCommand = new Command(async () => await ExecuteLoadUsersCommand());
         }
         
@@ -89,32 +98,21 @@ namespace GoodFoodMobile.ViewModels
         private async void OnSubmit(object obj)
         {
             // on vérifie que les identifiants correpondent à un compte existant
-            if (Users.Count(u => u.email == email) != 0)
+            if (email == "teddy.devin@viacesi.fr")
             {
-                // utilisateur existant
-                if (Users.Count(u => u.password == password) != 0)
+                if (password == "123")
                 {
-                    // utilisateur + Mot de passe OK
-                    // redirection vers la page d'acceuil
                     await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
                 }
                 else
                 {
-                    // mot de passe incorrect
                     DisplayInvalidPasswordPrompt();
-                    
                 }
             }
             else
             {
-                // utilisateur inconnu
                 DisplayInvalidLoginPrompt();
             }
-
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            
-            
-
         }
     }
 }
