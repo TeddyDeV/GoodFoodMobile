@@ -10,22 +10,20 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-            
-                 <Label Text="Création de votre compte" FontSize="Large" />
+                <Label Text="Création de votre compte" FontSize="Large" />
                  <Label/>
                  <Entry Placeholder="Nom"></Entry>
                  <Entry Placeholder="Prénom"></Entry>
                  <Entry Placeholder="Email"></Entry>
                  <Entry Placeholder="Mot de passe"></Entry>
-                 <Entry Placeholder="Adresse"></Entry>
+                 <Entry Placeholder="Rue"></Entry>
                  <Entry Placeholder="Code postal"></Entry>
                  <Entry Placeholder="Ville"></Entry>
                  <Entry Placeholder="Numéro de téléphone"></Entry>
                  <Label></Label>
                  <Button Text="Valider" BackgroundColor="Green" ></Button>
-                 <!--Command="{Binding SubmitUserCommand}"-->
-            
-        </StackLayout>
+                 <!--Command="{Binding SubmitUserCommand}"-->           
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
