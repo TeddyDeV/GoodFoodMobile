@@ -83,6 +83,15 @@ namespace GoodFoodMobile.Services
             return users;
         }
 
+        /// <summary>
+        /// Ajoute un utilisateur
+        /// </summary>
+        /// <param name="user"></param>
+        public void AddUser(User user)
+        {
+            users.Add(user);
+        }
+
         #endregion
     }
 }

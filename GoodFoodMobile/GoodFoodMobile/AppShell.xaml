@@ -42,6 +42,7 @@
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
         <ShellContent Route="AddUserPage" ContentTemplate="{DataTemplate local:AddUserPage}" />
+        <ShellContent Route="CreateUserOkPage" ContentTemplate="{DataTemplate local:CreateUserOkPage}" />
     </TabBar>
 
 

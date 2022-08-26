@@ -12,16 +12,16 @@
             <StackLayout>
                 <Label Text="Création de votre compte" FontSize="Large" />
                  <Label/>
-                 <Entry Placeholder="Nom"></Entry>
-                 <Entry Placeholder="Prénom"></Entry>
-                 <Entry Placeholder="Email"></Entry>
-                 <Entry Placeholder="Mot de passe"></Entry>
-                 <Entry Placeholder="Rue"></Entry>
-                 <Entry Placeholder="Code postal"></Entry>
-                 <Entry Placeholder="Ville"></Entry>
-                 <Entry Placeholder="Numéro de téléphone"></Entry>
+                 <Entry Placeholder="Nom" Text="{Binding LastName}" x:Name="LastName"></Entry>
+                <Entry Placeholder="Prénom" Text="{Binding FirstName}" x:Name="FirstName"></Entry>
+                <Entry Placeholder="Email" Text="{Binding Email}" x:Name="Email" Keyboard="Email"></Entry>
+                <Entry Placeholder="Mot de passe" Text="{Binding Password}" x:Name="Password" IsPassword="True"></Entry>
+                <Entry Placeholder="Rue" Text="{Binding Address}" x:Name="Address"></Entry>
+                <Entry Placeholder="Code postal" Text="{Binding PostalCode}" x:Name="PostalCode"></Entry>
+                <Entry Placeholder="Ville" Text="{Binding City}" x:Name="City"></Entry>
+                <Entry Placeholder="Numéro de téléphone" Text="{Binding PhoneNumber}" x:Name="PhoneNumber" Keyboard="Telephone"></Entry>
                  <Label></Label>
-                 <Button Text="Valider" BackgroundColor="Green" ></Button>
+                <Button Text="Valider" BackgroundColor="Green" Command="{Binding AddUserCommand}"></Button>
                  <!--Command="{Binding SubmitUserCommand}"-->           
             </StackLayout>
         </ScrollView>

@@ -14,6 +14,7 @@ namespace GoodFoodMobile
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(AddUserPage), typeof(AddUserPage));
+            Routing.RegisterRoute(nameof(CreateUserOkPage), typeof(CreateUserOkPage));
         }
 
     }

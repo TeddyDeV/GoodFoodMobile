@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoodFoodMobile.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace GoodFoodMobile.Services.Interfaces
         //IEnumerable<T> GetUsersAsync(bool forceRefresh = false);
 
         List<T> GetUsers();
+        void AddUser(User user);
         #endregion
     }
 }

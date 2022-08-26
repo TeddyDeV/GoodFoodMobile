@@ -53,15 +53,15 @@ namespace GoodFoodMobile.ViewModels
 
         public LoginViewModel()
         {
-            Users = new List<User>()
-            {
-                new User { id = Guid.NewGuid().ToString(), lastName = "Devin", firstName = "Teddy", email = "teddy.devin@viacesi.fr", password = "123", address = "70 rue entre deux landes" , postalCode = "76220", city ="La Feuillie" },
-                new User { id = Guid.NewGuid().ToString(), lastName = "John", firstName = "Doe", email = "john.doe@viacesi.fr", password = "123", address = "2 rue des portiers" , postalCode = "76000", city ="Rouen" }
-            };
+            //Users = new List<User>()
+            //{
+            //    new User { id = Guid.NewGuid().ToString(), lastName = "Devin", firstName = "Teddy", email = "teddy.devin@viacesi.fr", password = "123", address = "70 rue entre deux landes" , postalCode = "76220", city ="La Feuillie" },
+            //    new User { id = Guid.NewGuid().ToString(), lastName = "John", firstName = "Doe", email = "john.doe@viacesi.fr", password = "123", address = "2 rue des portiers" , postalCode = "76000", city ="Rouen" }
+            //};
 
             LoginCommand = new Command(OnSubmit);
             AddUserCommand = new Command(AddUser);
-            //Users = userDataStore.GetUsers();
+            
             //LoadUsersCommand = new Command(async () => await ExecuteLoadUsersCommand());
         }
         
@@ -99,6 +99,7 @@ namespace GoodFoodMobile.ViewModels
 
         private async void OnSubmit(object obj)
         {
+            Users = userDataStore.GetUsers();
             // on vérifie que les identifiants correpondent à un compte existant
             if (Users.Count(u=> u.email == email && u.password == password) != 0)
             {
