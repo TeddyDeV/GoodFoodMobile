@@ -9,11 +9,11 @@ namespace GoodFoodMobile.Views
     public partial class HomePage : ContentPage
     {
 
-        ItemsViewModel _viewModel;
+        RestaurantsViewModel _viewModel;
         public HomePage()
         {
             InitializeComponent();
-            BindingContext = _viewModel = new ItemsViewModel();
+            BindingContext = _viewModel = new RestaurantsViewModel();
         }
 
         protected override void OnAppearing()

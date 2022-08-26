@@ -13,7 +13,7 @@ namespace GoodFoodMobile.Services.Interfaces
         Task<bool> UpdateRestaurantAsync(T restaurant);
         Task<bool> DeleteRestaurantAsync(string email);
         Task<T> GetRestaurantAsync(string email);
-        //IEnumerable<T> GetRestaurantsAsync(bool forceRefresh = false);
+        Task<IEnumerable<T>> GetRestaurantsAsync(bool forceRefresh = false);
 
         List<T> GetRestaurants();
         void AddRestaurant(Restaurant restaurant);

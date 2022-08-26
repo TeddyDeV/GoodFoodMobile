@@ -13,6 +13,7 @@ namespace GoodFoodMobile.ViewModels
     {
         public IItemsDataStore<Item> itemDataStore => DependencyService.Get<IItemsDataStore<Item>>();
         public IUsersDataStore<User> userDataStore => DependencyService.Get<IUsersDataStore<User>>();
+        public IRestaurantsDataStore<Restaurant> restaurantDataStore => DependencyService.Get<IRestaurantsDataStore<Restaurant>>();
 
         bool isBusy = false;
         public bool IsBusy

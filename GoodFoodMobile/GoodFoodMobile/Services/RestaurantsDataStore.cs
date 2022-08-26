@@ -78,6 +78,15 @@ namespace GoodFoodMobile.Services
         /// <summary>
         /// renvoie la liste des restaurants
         /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Restaurant>> GetRestaurantsAsync(bool forceRefresh = false)
+        {
+            return await Task.FromResult(restaurants);
+        }
+
+        /// <summary>
+        /// renvoie la liste des restaurants
+        /// </summary>
         /// <param name="forceRefresh"></param>
         /// <returns></returns>
         public List<Restaurant> GetRestaurants()
