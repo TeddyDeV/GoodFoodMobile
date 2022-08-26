@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GoodFoodMobile.Services
 {
-    public class MockDataStore : ItemsDataStore<Item>
+    public class MockDataStore : IItemsDataStore<Item>
     {
         readonly List<Item> items;
 

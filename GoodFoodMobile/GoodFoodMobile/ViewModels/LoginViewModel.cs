@@ -53,11 +53,6 @@ namespace GoodFoodMobile.ViewModels
 
         public LoginViewModel()
         {
-            //Users = new List<User>()
-            //{
-            //    new User { id = Guid.NewGuid().ToString(), lastName = "Devin", firstName = "Teddy", email = "teddy.devin@viacesi.fr", password = "123", address = "70 rue entre deux landes" , postalCode = "76220", city ="La Feuillie" },
-            //    new User { id = Guid.NewGuid().ToString(), lastName = "John", firstName = "Doe", email = "john.doe@viacesi.fr", password = "123", address = "2 rue des portiers" , postalCode = "76000", city ="Rouen" }
-            //};
 
             LoginCommand = new Command(OnSubmit);
             AddUserCommand = new Command(AddUser);

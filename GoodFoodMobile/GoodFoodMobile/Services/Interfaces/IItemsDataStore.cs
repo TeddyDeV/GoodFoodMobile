@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace GoodFoodMobile.Services
 {
-    public interface ItemsDataStore<T>
+    public interface IItemsDataStore<T>
     {
         #region Items
         Task<bool> AddItemAsync(T item);

@@ -143,7 +143,7 @@ namespace GoodFoodMobile.ViewModels
 
         private async void AddUser(object obj)
         {
-            User user = new User { firstName = firstName, lastName = lastName, email = email, password = password , address = address , postalCode = postalCode , city = city , phoneNumber = phoneNumber };
+            User user = new User {id= Guid.NewGuid().ToString(), firstName = firstName, lastName = lastName, email = email, password = password , address = address , postalCode = postalCode , city = city , phoneNumber = phoneNumber };
             
             userDataStore.AddUser(user);
             await Shell.Current.GoToAsync($"//{nameof(CreateUserOkPage)}");

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GoodFoodMobile.Services
 {
-    public class UsersDataStore : UsersDataStore<User>
+    public class UsersDataStore : IUsersDataStore<User>
     {
         public  List<User> users;
 
@@ -83,10 +83,7 @@ namespace GoodFoodMobile.Services
             return users;
         }
 
-        /// <summary>
-        /// Ajoute un utilisateur
-        /// </summary>
-        /// <param name="user"></param>
+
         public void AddUser(User user)
         {
             users.Add(user);

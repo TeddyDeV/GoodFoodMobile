@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GoodFoodMobile.Services.Interfaces
 {
-    public interface UsersDataStore<T>
+    public interface IUsersDataStore<T>
     {
         #region Users
         Task<bool> AddUserAsync(T user);

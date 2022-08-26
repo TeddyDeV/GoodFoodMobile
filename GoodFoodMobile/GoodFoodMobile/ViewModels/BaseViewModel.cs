@@ -11,8 +11,8 @@ namespace GoodFoodMobile.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public ItemsDataStore<Item> itemDataStore => DependencyService.Get<ItemsDataStore<Item>>();
-        public UsersDataStore<User> userDataStore => DependencyService.Get<UsersDataStore<User>>();
+        public IItemsDataStore<Item> itemDataStore => DependencyService.Get<IItemsDataStore<Item>>();
+        public IUsersDataStore<User> userDataStore => DependencyService.Get<IUsersDataStore<User>>();
 
         bool isBusy = false;
         public bool IsBusy
